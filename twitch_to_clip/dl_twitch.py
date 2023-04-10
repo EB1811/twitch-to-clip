@@ -1,13 +1,14 @@
 import shutil
 from twitchdl import twitch, console
 from twitchdl.commands import download
-import functools
 import string
 
 parser = console.get_parser()
 
 
-def downloadTwitch(tId: str, outputName: str = None, twitchdlArgs: list = None, video: bool = False):
+def downloadTwitch(
+    tId: str, outputName: str = None, twitchdlArgs: list = None, video: bool = False
+):
     """
     Downloads a twitch clip or video and returns the title, user, game, and output name.
     @tId: The id of the twitch clip or video.
@@ -30,17 +31,23 @@ def downloadTwitch(tId: str, outputName: str = None, twitchdlArgs: list = None, 
     game = vidInfo["game"]["name"]
 
     # Need to remove punctuation from title for ffmpeg
-    outputVidName = title.translate(str.maketrans(
-        '', '', string.punctuation)) if not outputName else outputName
+    outputVidName = (
+        title.translate(str.maketrans("", "", string.punctuation))
+        if not outputName
+        else outputName
+    )
 
     args = parser.parse_args(
-        ["download"] + [tId] +
-        removeArgs(twitchdlArgs[:], ["-f", '--format', '-o', '--output']) +
-        ["-f", "mp4"] +
-        ["-o", "temp.{format}"] +
-        (["-q", "source"] if not any(
-            flag in twitchdlArgs for flag in ['-q', '--quality']
-        ) else [])
+        ["download"]
+        + [tId]
+        + removeArgs(twitchdlArgs[:], ["-f", "--format", "-o", "--output"])
+        + ["-f", "mp4"]
+        + ["-o", "temp.{format}"]
+        + (
+            ["-q", "source"]
+            if not any(flag in twitchdlArgs for flag in ["-q", "--quality"])
+            else []
+        )
     )
     print(args)
     download(args)
@@ -53,9 +60,10 @@ def removeArgs(args: list, argsToRemove: list):
     for arg in argsToRemove:
         if arg in args:
             index = args.index(arg)
-            del args[index:index + 2]
+            del args[index : index + 2]
 
     return args
+
 
 # flags = ' '.join(f'{key} {value}' for key, value in flags.items() if value)
 # downloadCommand = f"twitch-dl download {tId} {flags}"
