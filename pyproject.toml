@@ -8,8 +8,6 @@ authors = [
     {name = "Emmanuil Borovikovs", email = "eb.dev.99@gmail.com"},
 ]
 readme="README.md"
-homepage = "https://github.com/EB1811/twitch-to-clip"
-repository = "https://github.com/EB1811/twitch-to-clip"
 classifiers=[
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
 ]
@@ -24,3 +22,6 @@ dependencies=[
 
 [project.scripts]
 twitch-to-clip = "twitch_to_clip.__main__:main"
+
+[project.urls]
+repository = "https://github.com/EB1811/twitch-to-clip"
