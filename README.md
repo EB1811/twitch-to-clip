@@ -6,7 +6,6 @@ It uses the [twitch-dl](https://github.com/ihabunek/twitch-dl ) and ffmpeg packa
 
 
 
-
 Requirements
 ---------
 - Python 3.7 or higher installed on your system

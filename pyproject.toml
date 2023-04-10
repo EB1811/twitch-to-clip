@@ -1,0 +1,24 @@
+[build-system]
+requires = ['setuptools>=42']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name="twitch-to-clip"
+authors = [
+    {name = "Emmanuil Borovikovs", email = "eb.dev.99@gmail.com"},
+]
+readme="readme.md"
+classifiers=[
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+]
+requires-python=">=3.7"
+dynamic=[
+    "version",
+    "description",
+]
+dependencies=[
+    "twitch-dl>=2.*",
+]
+
+[project.scripts]
+twitch-to-clip = "twitch_to_clip.__main__:main"
