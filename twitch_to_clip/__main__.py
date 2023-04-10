@@ -32,7 +32,7 @@ def main():
             getIdFromUrl(url),
             outputName=output,
             twitchdlArgs=convertToArgsArray(twitchdlArgsString),
-            ffmpegArgs=convertToArgsArray(ffmpegArgsString),
+            ffmpegArgs=ffmpegArgsString,
         )
 
         print("Output Name:", videoName)
