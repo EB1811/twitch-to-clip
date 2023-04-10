@@ -5,7 +5,6 @@ CLI tool that allows you to download Twitch clips or highlight videos and conver
 It uses the [twitch-dl](https://github.com/ihabunek/twitch-dl ) and ffmpeg packages to achieve this.
 
 
-
 Requirements
 ---------
 - Python 3.7 or higher installed on your system
