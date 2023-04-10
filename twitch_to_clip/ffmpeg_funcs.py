@@ -5,7 +5,7 @@ from subprocess import check_output
 
 
 def createVerticalVideo(clipName: str, outputName: str):
-    inputFile = f"raw_{clipName}"
+    inputFile = f"{clipName}"
     outputFile = f"{outputName}"
 
     command = f'ffmpeg -i "{inputFile}" -lavfi "[0:v]scale=256/81*iw:256/81*ih,boxblur=luma_radius=min(h\,w)/40:luma_power=3:chroma_radius=min(cw\,ch)/40:chroma_power=1[bg];[bg][0:v]overlay=(W-w)/2:(H-h)/2,setsar=1,crop=w=iw*81/256" -c:a copy "{outputFile}"'
@@ -25,7 +25,7 @@ def addBlackToEnd(clipName: str, outputName: str, time: str):
 
 
 def getVidLength(clipName: str):
-    inputFile = f"raw_{clipName}"
+    inputFile = f"{clipName}"
 
     command = (
         f'ffprobe -i "{inputFile}" -show_entries format=duration -v quiet -of csv="p=0"'

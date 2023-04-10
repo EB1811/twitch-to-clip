@@ -11,7 +11,7 @@ def dlAndCreate(
     )
 
     print("\n---Creating Video---\n")
-    createShort(f"{outputVidName}.mp4", f"{outputVidName}.mp4", ffmpegArgs)
+    createShort(f"raw_{outputVidName}.mp4", f"{outputVidName}.mp4", ffmpegArgs)
 
     return (f"{outputVidName}.mp4", title, user, game)
 
