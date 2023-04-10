@@ -7,7 +7,7 @@ name="twitch-to-clip"
 authors = [
     {name = "Emmanuil Borovikovs", email = "eb.dev.99@gmail.com"},
 ]
-readme="readme.md"
+readme="README.md"
 classifiers=[
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
 ]

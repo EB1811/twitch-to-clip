@@ -4,6 +4,14 @@ Twitch-To-Clip
 CLI tool that allows you to download Twitch clips or highlight videos and convert them into vertical videos ideal for TikTok and YouTube shorts.
 It uses the [twitch-dl](https://github.com/ihabunek/twitch-dl ) and ffmpeg packages to achieve this.
 
+Installation
+---------
+
+You can install using pip. Open your terminal and run the following command:
+
+```shell
+pip install twitch-to-clip
+```
 
 Requirements
 ---------
